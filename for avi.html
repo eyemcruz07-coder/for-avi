@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>for my pretty avi ♡</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffe4ec, #fff5f7);
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Floating hearts */
+        .hearts span {
+            position: absolute;
+            bottom: -50px;
+            color: #ff8fab;
+            font-size: 22px;
+            opacity: 0.7;
+            animation: float 8s linear infinite;
+        }
+
+        .hearts span:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .hearts span:nth-child(2) {
+            left: 25%;
+            animation-delay: 2s;
+        }
+
+        .hearts span:nth-child(3) {
+            left: 45%;
+            animation-delay: 4s;
+        }
+
+        .hearts span:nth-child(4) {
+            left: 70%;
+            animation-delay: 1s;
+        }
+
+        .hearts span:nth-child(5) {
+            left: 90%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0% {
+                bottom: -50px;
+                transform: translateX(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateX(30px) rotate(180deg);
+            }
+
+            100% {
+                bottom: 110%;
+                transform: translateX(-30px) rotate(360deg);
+            }
+        }
+
+        /* Main card */
+        .card {
+            width: 90%;
+            max-width: 450px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 35px 28px;
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.88);
+            border-radius: 28px;
+
+            box-shadow:
+                0 15px 40px rgba(180, 80, 110, 0.18);
+
+            backdrop-filter: blur(10px);
+
+            z-index: 2;
+        }
+
+        /* Heart */
+        .heart {
+            font-size: 60px;
+            color: #e97994;
+            animation: heartbeat 1.5s infinite;
+            margin-bottom: 10px;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.1);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+
+            60% {
+                transform: scale(1.12);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            color: #d85b7a;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            color: #777;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* Button */
+        button {
+            border: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+
+            background: #e97994;
+            color: white;
+
+            font-size: 15px;
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.06);
+            background: #d85b7a;
+        }
+
+        /* Message */
+        .message {
+            display: none;
+            margin-top: 25px;
+            text-align: left;
+
+            color: #555;
+            font-size: 15px;
+            line-height: 1.8;
+
+            animation: fadeIn 1s ease;
+        }
+
+        .message p {
+            margin-bottom: 15px;
+        }
+
+        .signature {
+            text-align: right;
+            color: #d85b7a;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Music player */
+        .music {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #f2ccd6;
+
+            text-align: center;
+        }
+
+        .music-title {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .music button {
+            background: transparent;
+            color: #d85b7a;
+            border: 1px solid #e9a6b7;
+            padding: 8px 18px;
+            font-size: 13px;
+        }
+
+        .music button:hover {
+            background: #fff0f4;
+        }
+
+        /* Hide scrollbar nicely */
+        .card::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .card::-webkit-scrollbar-thumb {
+            background: #f0b5c4;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div class="hearts">
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+    </div>
+
+
+    <!-- Main Card -->
+    <div class="card">
+
+        <div class="heart">♡</div>
+
+        <h1>hi, baby ♡</h1>
+
+        <p class="intro">
+            i made something small for you.
+        </p>
+
+        <button id="openButton" onclick="showMessage()">
+            open this ♡
+        </button>
+
+
+        <!-- Love Message -->
+        <div class="message" id="message">
+
+            <p>
+                hi baby, i made this little space
+                just for you.
+            </p>
+
+            <p>
+                avi, i just wanted to make this little something for you 
+                because sometimes i don't know how to express everything 
+                that i feel through words.
+            </p>
+
+            <p>
+                i know that not everything has been easy for us. we've had 
+                our disagreements, our times where we've been frustrated, 
+                tired, or unsure about how to convey our thoughts. but even 
+                after everything, i still find myself choosing you. i still 
+                want to learn about you and understand you.
+            </p>
+
+            <p>
+                thank you for all the small things that you do even if they may 
+                not mean much to you. thank you for everything that you do. 
+                the sudden laughs, the calls, the comfort and just being 
+                someone who i can spend my day with. honestly, you have made a 
+                lot of my normal moments more special because of your presence.
+            </p>
+
+            <p>
+                also, i would like you to remember that there is no need for you to 
+                be okay in front of me. you don't have to have everything figured out 
+                and the right words. if you are tired, shy, overwhelmed or simply
+                having a tough day, that's fine too. it's okay if you need some time. 
+                i will be there for you and will always pray to understand you rather 
+                than forcing you to cope on your own.
+            </p>
+
+            <p>
+                i know that both of us are still learning about loving each other, 
+                and i do not expect that we will have everything figured out yet. 
+                i just hope that we continue to make the decision to communicate, 
+                be patient with one another, and come back to one another.
+            </p>
+
+            <p>
+                no matter how ordinary the day is, i'm always
+                happy that somehow, i get to share a part of it
+                with you.
+            </p>
+
+            <p>
+                i love you, avi. more than i can even explain sometimes. 
+                but i am very glad that it is you. ♡
+            </p>
+
+            <p class="signature">
+                aj ♡
+            </p>
+
+        </div>
+
+
+        <!-- Music -->
+        <div class="music">
+
+            <div class="music-title">
+                ♫ futile devices — sufjan stevens
+            </div>
+
+            <audio id="bgMusic" loop>
+                <source src="futile-devices.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+
+            <button id="musicButton" onclick="toggleMusic()">
+                ♫ play music
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const music = document.getElementById("bgMusic");
+        const musicButton = document.getElementById("musicButton");
+
+        /*
+         * Opens the love message
+         * and starts the music.
+         */
+        function showMessage() {
+
+            const message = document.getElementById("message");
+            const openButton = document.getElementById("openButton");
+
+            message.style.display = "block";
+
+            openButton.style.display = "none";
+
+            music.volume = 0.4;
+
+            music.play()
+                .then(() => {
+
+                    musicButton.innerHTML = "Ⅱ pause music";
+
+                })
+                .catch((error) => {
+
+                    console.log("Music could not autoplay:", error);
+
+                    musicButton.innerHTML = "♫ play music";
+
+                });
+        }
+
+
+        /*
+         * Play / Pause music
+         */
+        function toggleMusic() {
+
+            if (music.paused) {
+
+                music.play()
+                    .then(() => {
+
+                        musicButton.innerHTML = "Ⅱ pause music";
+
+                    })
+                    .catch((error) => {
+
+                        console.log("Music error:", error);
+
+                    });
+
+            } else {
+
+                music.pause();
+
+                musicButton.innerHTML = "♫ play music";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
